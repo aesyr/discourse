@@ -146,11 +146,12 @@ gem 'rack-protection' # security
 # in production environments by default.
 # allow everywhere for now cause we are allowing asset debugging in prd
 group :assets do
-  gem 'sass-rails'
-  gem 'compass'
-  gem 'compass-rails'
-  gem 'uglifier'
 end
+
+gem 'sass-rails'
+gem 'uglifier'
+gem 'compass'
+gem 'compass-rails'
 
 group :test do
   gem 'fakeweb', '~> 1.3.0', require: false

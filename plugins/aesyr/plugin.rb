@@ -3,4 +3,4 @@
 # version: 0.1
 # authors: Marian Rudzynski
 
-register_asset 'stylesheets/aesyr.css.scss'
+register_asset 'stylesheets/aesyr.scss'

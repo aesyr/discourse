@@ -147,6 +147,8 @@ gem 'rack-protection' # security
 # allow everywhere for now cause we are allowing asset debugging in prd
 group :assets do
   gem 'sass-rails'
+  gem 'compass'
+  gem 'compass-rails'
   gem 'uglifier'
 end
 

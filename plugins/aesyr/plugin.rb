@@ -3,6 +3,4 @@
 # version: 0.1
 # authors: Marian Rudzynski
 
-puts "I WAS INCLUDED"
-
-register_asset 'stylesheets/aesyr.css'
+register_asset 'stylesheets/aesyr.css.scss'

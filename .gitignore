@@ -93,3 +93,5 @@ config/version.rb
 bundler_stubs/*
 
 vendor/bundle/*
+
+*swp

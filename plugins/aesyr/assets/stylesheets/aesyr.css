@@ -13,11 +13,11 @@ body .admin-content {
 /* line 18, aesyr.css.scss */
 body .d-header {
   height: 130px;
-  background: url("/assets/images/nav-bg-forum.png"), -webkit-gradient(linear, 50% 0%, 50% 55, color-stop(18.18182%, rgba(0, 0, 0, 0.7)), color-stop(98.18182%, #000000), color-stop(100%, transparent));
-  background: url("/assets/images/nav-bg-forum.png"), -webkit-linear-gradient(rgba(0, 0, 0, 0.7) 10px, #000000 54px, transparent 55px);
-  background: url("/assets/images/nav-bg-forum.png"), -moz-linear-gradient(rgba(0, 0, 0, 0.7) 10px, #000000 54px, transparent 55px);
-  background: url("/assets/images/nav-bg-forum.png"), -o-linear-gradient(rgba(0, 0, 0, 0.7) 10px, #000000 54px, transparent 55px);
-  background: url("/assets/images/nav-bg-forum.png"), linear-gradient(rgba(0, 0, 0, 0.7) 10px, #000000 54px, transparent 55px);
+  background: url('/assets/images/nav-bg-forum.png?1388636450'), -webkit-gradient(linear, 50% 0%, 50% 55, color-stop(18.18182%, rgba(0, 0, 0, 0.7)), color-stop(98.18182%, #000000), color-stop(100%, transparent));
+  background: url('/assets/images/nav-bg-forum.png?1388636450'), -webkit-linear-gradient(rgba(0, 0, 0, 0.7) 10px, #000000 54px, transparent 55px);
+  background: url('/assets/images/nav-bg-forum.png?1388636450'), -moz-linear-gradient(rgba(0, 0, 0, 0.7) 10px, #000000 54px, transparent 55px);
+  background: url('/assets/images/nav-bg-forum.png?1388636450'), -o-linear-gradient(rgba(0, 0, 0, 0.7) 10px, #000000 54px, transparent 55px);
+  background: url('/assets/images/nav-bg-forum.png?1388636450'), linear-gradient(rgba(0, 0, 0, 0.7) 10px, #000000 54px, transparent 55px);
   background-position: center 10px, center;
   background-repeat: no-repeat;
   background-color: transparent;

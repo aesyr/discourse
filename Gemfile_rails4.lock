@@ -169,6 +169,7 @@ GEM
     multi_json (1.8.2)
     multipart-post (1.2.0)
     mustache (0.99.4)
+    mysql2 (0.3.14)
     net-scp (1.1.2)
       net-ssh (>= 2.6.5)
     net-ssh (2.7.0)
@@ -308,6 +309,8 @@ GEM
       rspec-core (~> 2.14.0)
       rspec-expectations (~> 2.14.0)
       rspec-mocks (~> 2.14.0)
+    ruby-bbcode-to-md (0.0.15)
+      activesupport
     ruby-hmac (0.4.0)
     ruby-openid (2.3.0)
     ruby-readability (0.5.7)
@@ -438,6 +441,7 @@ DEPENDENCIES
   mock_redis
   multi_json
   mustache
+  mysql2
   nokogiri
   oj
   omniauth
@@ -471,6 +475,7 @@ DEPENDENCIES
   rinku
   rspec-given
   rspec-rails
+  ruby-bbcode-to-md
   ruby-readability
   sanitize
   sass

@@ -144,7 +144,10 @@ module PrettyText
 
       context.eval('opts["mentionLookup"] = function(u){return helpers.is_username_valid(u);}')
       context.eval('opts["lookupAvatar"] = function(p){return Discourse.Utilities.avatarImg({size: "tiny", avatarTemplate: helpers.avatar_template(p)});}')
+      begin
       baked = context.eval('Discourse.Markdown.markdownConverter(opts).makeHtml(raw)')
+      rescue
+      end
     end
 
     baked

@@ -1,0 +1,165 @@
+@import 'compass/css3/images';
+@import 'compass/css3/box-shadow';
+@import 'compass/typography/text/ellipsis';
+
+html, body {
+  background: #111;
+  color: #ddd;
+
+  .user-preferences,
+  .admin-content {
+    color: black;
+  }
+}
+
+// Stack one level deeper than discourse stylesheets to apply our styles
+// with priority.
+
+body .d-header {
+  height: 130px;
+  @include background(
+    url('/assets/images/nav-bg-forum.png'),
+    linear-gradient(rgba(black, 0.7) 10px, black 54px, transparent 55px)
+  );
+
+  background-position: center 10px, center;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  @include box-shadow(none);
+
+  pointer-events: none;
+
+  .contents {
+    pointer-events: auto !important;
+    margin: 5px 0;
+  }
+
+  .title {
+    img { display: none; }
+
+    > a {
+      display: block;
+      width: 260px;
+      height: 50px;
+      // background: white;
+    }
+  }
+
+  .icons {
+    background: white;
+  }
+
+  .current-username a {
+    color: white;
+  }
+
+  .extra-info-wrapper {
+    width: 45%;
+  }
+
+  .extra-info {
+    h1 a {
+      display: block;
+      @include ellipsis;
+    }
+  }
+}
+
+body {
+  #main-outlet {
+    padding-top: 85px;
+  }
+
+  #topic-title {
+    padding: 0px;
+  }
+
+  // Instead of widening the space above, we shove things that are initially
+  // overlayed by the AESYR logo to the right.
+  #topic-title .container .inner,
+  .list-controls .container {
+    box-sizing: border-box; // Y U NO GLOBAL
+    padding-left: 250px;
+  }
+
+  // Or down..
+  .user-navigation {
+    margin-top: 80px;
+  }
+
+
+
+  .topic-body,
+  .topic-meta-data {
+    border-top: 1px solid #292929;
+  }
+  .post-cloak:last-of-type {
+    border-bottom: 1px solid #292929;
+  }
+
+  // Get rid of the waste of space 'reply as new topic' thing on the right
+  .topic-post > article .row .span5 {
+    display: none;
+  }
+  .topic-body {
+    width: 100%;
+    max-width: 988px;
+  }
+
+  pre code,
+  p > code,
+  li > code {
+    background: #333;
+    color: #ccc;
+  }
+
+  a, a:visited {
+    color: desaturate(gold, 65%);
+  }
+
+  a:hover {
+    color: desaturate(gold, 45%);
+  }
+
+  #reply-control {
+    color: black;
+  }
+
+  blockquote {
+    color: #aaa;
+    background: #222;
+  }
+
+  .quote {
+    .title {
+      background: #333;
+    }
+  }
+
+  .nav-pills > li > a {
+    color: #888;
+  }
+
+  // table > ?
+  #suggested-topics table,
+  #topic-list {
+    border: 1px black solid;
+    @include box-shadow(0px 0px 2px rgba(#333, 0.9));
+
+    th {
+      background: #222;
+      color: #999;
+
+      &.sortable:hover { 
+        background: #333 !important; 
+      }
+    }
+
+    td {
+      background: #151515;
+    }
+  }
+
+  .avatar {
+  }
+}

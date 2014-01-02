@@ -1,0 +1,16 @@
+############################################################
+#### Configuration
+############################################################
+
+# database stuff
+sql_server: localhost
+sql_user: root
+sql_database: agm2_production
+sql_password: 
+
+# User with admin privileges to create users and category
+discourse_admin: system
+
+# If true then nothing will be written to the Discourse database
+#test_mode: true
+

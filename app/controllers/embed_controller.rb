@@ -11,6 +11,7 @@ class EmbedController < ApplicationController
 
     if topic_id
       @topic_view = TopicView.new(topic_id, current_user, {best: 5})
+      @second_post_url = "#{@topic_view.topic.url}/2" if @topic_view
     else
       Jobs.enqueue(:retrieve_topic, user_id: current_user.try(:id), embed_url: embed_url)
       render 'loading'
@@ -22,8 +23,11 @@ class EmbedController < ApplicationController
   private
 
     def ensure_embeddable
-      raise Discourse::InvalidAccess.new('embeddable host not set') if SiteSetting.embeddable_host.blank?
-      raise Discourse::InvalidAccess.new('invalid referer host') if URI(request.referer || '').host != SiteSetting.embeddable_host
+
+      if !(Rails.env.development? && current_user.try(:admin?))
+        raise Discourse::InvalidAccess.new('embeddable host not set') if SiteSetting.embeddable_host.blank?
+        raise Discourse::InvalidAccess.new('invalid referer host') if URI(request.referer || '').host != SiteSetting.embeddable_host
+      end
 
       response.headers['X-Frame-Options'] = "ALLOWALL"
     rescue URI::InvalidURIError

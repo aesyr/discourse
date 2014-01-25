@@ -16,9 +16,6 @@ html, body {
 // More complicated user title styles that I dont want to cram into the group 
 // names (see 99-aesyr.rb)
 
-body .topic-creator {
-  position: relative;
-}
 @mixin badge($bg, $fg) {
   display: inline-block;
   width: 60px;
@@ -58,7 +55,7 @@ body .topic-creator {
     width: 85px;
     height: 40px;
     position: absolute;
-    top: -22px; left: 50%;
+    top: 7px; left: 50%;
     margin-left: -44px;
     background: asset-data-url('images/aesyr-badge.png') top center no-repeat;
     color: desaturate(red, 25%);
@@ -207,6 +204,7 @@ body {
 
   .topic-body,
   .topic-meta-data {
+    position: relative;
     border-top: 1px solid #292929;
   }
   .post-cloak:last-of-type {

@@ -1,5 +1,6 @@
 @import 'compass/css3/images';
 @import 'compass/css3/box-shadow';
+@import 'compass/css3/border-radius';
 @import 'compass/typography/text/ellipsis';
 
 html, body {
@@ -12,10 +13,123 @@ html, body {
   }
 }
 
+// More complicated user title styles that I dont want to cram into the group 
+// names (see 99-aesyr.rb)
+
+body .topic-creator {
+  position: relative;
+}
+@mixin badge($bg, $fg) {
+  display: inline-block;
+  width: 60px;
+  margin-bottom: 3px;
+  text-align: center;
+  background: $bg;
+  color: lighten($fg, 10%);
+  @include border-radius(2px);
+  padding: 2px 5px 1px 5px;
+  font-style: normal;
+  border: darken($fg, 10%) 2px solid;
+  text-transform: uppercase;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+
+.user-title {
+  padding-top: 10px;
+
+  // show max. 4 badges, hover for all
+  max-height: 89px;
+  overflow: hidden;
+
+  &:hover {
+    max-height: 100%;
+    overflow: visible;
+    background: #050505;
+    @include border-radius(3px);
+    padding-bottom: 10px;
+  }
+
+  .aesyr {
+    display: inline-block;
+    padding-top: 0px;
+    text-indent: -9999px;
+    width: 85px;
+    height: 40px;
+    position: absolute;
+    top: -22px; left: 50%;
+    margin-left: -44px;
+    background: asset-data-url('images/aesyr-badge.png') top center no-repeat;
+    color: desaturate(red, 25%);
+    font-size: 0.9rem;
+
+    &:before { 
+      content: '<';
+    }
+    &:after {
+      content: '>';
+    }
+  }
+
+  .badge {
+    @include badge(#000, #ccc);
+  }
+
+  .founder {
+    @include badge(#000, desaturate(red, 20%));
+    @include background(linear-gradient(#333, #222));
+    @include box-shadow(inset 0 0 0 2px black);
+    color: gold;
+    font-weight: bold;
+  }
+
+  .member,
+  .berserker {
+    @include badge(#000, desaturate(red, 20%));
+    font-weight: bold;
+  }
+
+  .officer,
+  .einherjar {
+    @include badge(#000, desaturate(red, 20%));
+    color: gold;
+    font-weight: bold;
+  }
+
+  // Server Badges!
+  // for members that have actively played on these
+
+  .nefarian,
+  .frostwolf,
+  .aegwynn {
+    @include badge(#000, desaturate(gold, 25%));
+  }
+
+  // Game Badges!
+  // for members that have been active in these games
+  // (only where actual chapters have existed.. or could exist)
+
+  .wow,
+  .aoc,
+  .swtor,
+  .gw2,
+  .eso,
+  .eqn {
+    @include badge(darken(red, 50%), #ccc);
+  }
+
+  // Summit Badges!
+
+  .berlin2013 {
+    @include badge(darken(desaturate(blue, 50%), 20%), lighten(desaturate(blue, 70%), 40%));
+  }
+
+  
+}
+
 // Stack one level deeper than discourse stylesheets to apply our styles
 // with priority.
-
-fuck { you: 1; }
 
 body .d-header {
   height: 130px;
